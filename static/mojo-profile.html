@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MoJo: Popcorn Kettle - Reporter Profile</title>
+		<script type="text/javascript" src="JQUERY"></script>
+		<script type="text/javascript" src="POPCORN (jQuery-independent, I assume)"></script>
+		<script type="text/javascript">
+		
+		</script>
+		<style type="text/css">
+html, body{
+	font-family:tahoma;
+}
+img{
+	vertical-align:middle;
+}
+div.nav{
+	background-color:black;
+	padding:4px;
+	color:white;
+	width:70%;
+	margin-left:9%;
+	padding-left:4%;
+}
+table{
+	width:74%;
+	margin-left:9%;
+	margin-right:9%;
+	padding-left:4%;
+	padding-right:4%;
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color:#dddddd;
+}
+span.navitem{
+	display:inline:
+	margin-left:15px;
+	margin-right:15px;
+	padding:4px;
+	background-color:black;
+	color:white;
+	cursor:pointer;
+	text-align:center;
+}
+span.navitem:hover{
+	color:orange;
+}
+span.navitem a{
+	text-decoration:none;
+	color:white;
+}
+span.navitem a:hover{
+	color:orange;
+}
+span.selectitem{
+	color:orange;
+}
+span.selectitem a{
+	color:orange;
+}
+button{
+	cursor:pointer;
+}
+li{
+	padding:12px;
+}
+li.response{
+	list-style-type:circle;
+	margin-left:50px;
+}
+div.personprofile{
+	background-color:white;
+	-moz-box-shadow: 5px 5px 5px silver;
+	-webkit-box-shadow: 5px 5px 5px silver;
+	box-shadow: 5px 5px 5px silver;
+	padding: 5px 50px;
+	margin-bottom:7px;
+}
+div.profileops{
+	font-family:arial;
+	font-size:10pt;
+}
+div.profiledesc{
+	font-family:tahoma;
+}
+		</style>
+	</head>
+	<body>
+		<div class="headerfix" style="background-color:white;color:black;">
+			<span style="margin-left:14%;font-size:20pt;font-weight:bold;">Popcorn Kettle</span>
+			<span style="position:absolute;right:19%;">Logged in as Reporter</span>
+		</div>
+		<div class="nav"><nav>
+			<span class="navitem">Interview</span>|
+			<span class="navitem">Coverage</span>|
+			<span class="navitem selectitem">
+				<a href="/login">Reporter Profile</a>
+			</span>
+		</nav></div>
+		<table>
+			<tr>
+				<td colspan="2">
+					<h3 class="heading">Edit Interview with Earth Outreach</h3>
+					<video id="popcornsite" width="480" height="320" style="padding:15px;border:3px solid black;background-color:white;margin-right:25px;">
+					</video>
+				</td>
+				<td colspan="2">
+					<h3 class="heading">Current Profile View</h3>
+					<div>
+						Profile of the current speaker
+						<br/><br/>
+						Twitter of the host org
+						<br/><br/>
+						<button>Change Profiles</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="max-width:500px;padding-right:15px;">
+					<h3 class="heading">Prompt, review, and filter comments</h3>
+					<textarea style="width:90%;height:100px;">Our reporters interviewed local citizens and the mayor in an effort to discover the roots of the education budget crisis.
+<a href="/coverage">Read our coverage</a> of this breaking story.</textarea>
+					<ul>
+						<li class="question">
+							What's the current state of the Gulf of Mexico?  What are you continuing to work on?
+							<br/>
+							Asked by <i>sam pull</i>
+						</li>
+						<li class="response">
+							I added a response to your question.
+							<br/>
+							Added by <i>sandy shores</i>, Environmental Scientist, Earth Outreach
+						</li>
+						<hr/>
+						<li class="question">
+							What hashtags can I use to spread the word, and to find out more about what you're doing?
+							<br/>
+							Asked by <i>somm user</i>
+						</li>
+						<li class="response">
+							A number of our volunteers are using #cleanGulf
+							<br/>
+							Answered by <i>betty tweet</i>, Social Media, Earth Outreach
+						</li>
+						<li class="response">
+							Our project in the Gulf was part of a larger community that we call Grassroots Mapping.  Follow our blog at grassrootsmapping.org
+							<br/>
+							Answered by <i>map maker</i>, Volunteer, Grassroots Mapping
+						</li>
+					</ul>
+				</td>
+				<td colspan="2">
+					<h3 class="heading" style="background-color:white;padding:8px;">Profiles</h3>
+					<div class="personprofile">
+						<button>Add Profile</button>
+					</div>
+					<div class="personprofile">
+						<h4><img src="twitterIcon.jpg" style="max-height:16pt;max-width:16pt;"/>Person 1</h4>
+						<div class="profiledesc">
+							Environmental scientist. <a href="editprofile.html">Edit</a>
+						</div>
+						<br/>
+						<div class="profileops">
+							<a href="notes.html">Review interview notes</a><br/>
+							Contact by <a href="">e-mail</a>, <a href="">Twitter</a>, <a href="">Facebook</a>, <a href="">phone</a>
+						</div>
+					</div>
+					<div class="personprofile">
+						<h4><img src="twitterIcon.jpg" style="max-height:16pt;max-width:16pt;"/>Person 2</h4>
+						<div class="profiledesc">
+							The PR Guy. <a href="editprofile.html">Edit</a>
+						</div>
+						<br/>
+						<div class="profileops">
+							<a href="notes.html">Review interview notes</a><br/>
+							Contact by <a href="">e-mail</a>, <a href="">Twitter</a>, <a href="">Facebook</a>, <a href="">phone</a>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<div class="footer">
+			Developed with the open web technology <a href="http://popcornjs.org" target="_blank">Popcorn.js</a>
+		</div>
+	</body>
+</html>

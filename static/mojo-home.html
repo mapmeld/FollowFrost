@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MoJo FollowFrost</title>
+		<script type="text/javascript" src="JQUERY"></script>
+		<script type="text/javascript" src="POPCORN (jQuery-independent, I assume)"></script>
+		<script type="text/javascript">
+		</script>
+		<style type="text/css">
+html, body{
+	font-family:tahoma;
+}
+div.nav{
+	background-color:black;
+	padding:4px;
+	color:white;
+	width:70%;
+	margin-left:9%;
+	padding-left:4%;
+}
+table{
+	width:74%;
+	margin-left:9%;
+	margin-right:9%;
+	padding-left:4%;
+	padding-right:4%;
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color:#4488ff;
+}
+span.navitem{
+	display:inline:
+	margin-left:15px;
+	margin-right:15px;
+	padding:4px;
+	background-color:black;
+	color:white;
+	cursor:pointer;
+	text-align:center;
+}
+span.navitem:hover{
+	color:orange;
+}
+span.navitem a{
+	text-decoration:none;
+	color:white;
+}
+span.navitem a:hover{
+	color:orange;
+}
+span.selectitem{
+	color:orange;
+}
+button{
+	cursor:pointer;
+}
+li{
+	padding:12px;
+	cursor:pointer;
+}
+li.response{
+	list-style-type:circle;
+	margin-left:50px;
+}
+li a{
+	text-decoration:none;
+	color:black;
+}
+li a:hover{
+	text-decoration:underline;
+}
+img{
+	vertical-align:middle;
+}
+		</style>
+	</head>
+	<body>
+		<h1 style="margin-left:14%;">Welcome to FollowFrost</h1>
+		<div class="nav"><nav>
+			<span class="navitem selectitem">Intro</span>|
+			<span class="navitem">Top Interviews</span>|
+			<span class="navitem">Breaking News</span>|
+			<span class="navitem">
+				<a href="/login">Sign In</a>
+			</span>
+		</nav></div>
+		<table>
+			<tr>
+				<td>
+					<div style="border:1px solid black;background-color:white;padding:5px;max-width:600px;">
+						<b>What's this all about?</b>
+						<br/>
+						<p>FollowFrost is an open project to extend online video interviews for better engagement between interviewees, journalists, and commenters.
+						<br/><br/>
+						Ask follow-up questions, find great people to follow on Twitter, and easily narrow video content to the exact frames that you want.</p>
+					</div>
+				</td>
+				<td>
+					<h3 class="heading">Get started</h3>
+					<ul>
+						<li>
+							<a href="http://mapmeld.appspot.com/followfrost/interview?ranking=top" target="_blank">
+								<img src=""/>
+								Watch an interview
+							</a>
+						</li>
+						<li>
+							<a href="http://mapmeld.appspot.com/followfrost/interview?ranking=ongoing" target="_blank">
+								<img src=""/>
+								Ask a question, get a video response
+							</a>
+						</li>
+						<li>
+							<a href="http://mapmeld.appspot.com/followfrost/profiles?ranking=top" target="_blank">
+								<img src=""/>
+								Keep up with people doing cool work in interesting places
+							</a>
+						</li>
+						<li>
+							<a href="http://mapmeld.appspot.com/followfrost/new" target="_blank">
+								<img src=""/>
+								Start your own Q&amp;A
+							</a>
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+		<div class="footer" style="margin-left:10%;">
+			<br/>
+			Powered by the open web technology <a href="http://popcornjs.org" target="_blank">Popcorn.js</a>
+			<br/><br/>
+			Developed for the <a href="http://p2pu.org/en/groups/knight-mozilla-learning-lab/" target="_blank">Knight-Mozilla Learning Lab</a> by <a href="http://andrew.cmu.edu/~ndoiron" target="_blank">Nick Doiron</a>.
+		</div>
+	</body>
+</html>

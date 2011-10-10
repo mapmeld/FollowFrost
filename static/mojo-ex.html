@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MoJo FollowFrost</title>
+		<script type="text/javascript" src="JQUERY"></script>
+		<script type="text/javascript" src="POPCORN (jQuery-independent, I assume)"></script>
+		<script type="text/javascript">
+		</script>
+		<style type="text/css">
+html, body{
+	font-family:tahoma;
+}
+div.nav{
+	background-color:black;
+	padding:4px;
+	color:white;
+	width:70%;
+	margin-left:9%;
+	padding-left:4%;
+}
+table{
+	width:74%;
+	margin-left:9%;
+	margin-right:9%;
+	padding-left:4%;
+	padding-right:4%;
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color:#4488ff;
+}
+span.navitem{
+	display:inline:
+	margin-left:15px;
+	margin-right:15px;
+	padding:4px;
+	background-color:black;
+	color:white;
+	cursor:pointer;
+	text-align:center;
+}
+span.navitem:hover{
+	color:orange;
+}
+span.navitem a{
+	text-decoration:none;
+	color:white;
+}
+span.navitem a:hover{
+	color:orange;
+}
+span.selectitem{
+	color:orange;
+}
+button{
+	cursor:pointer;
+}
+button.watch{
+	border:none;
+	background-color:darkgreen;
+	color:white;
+}
+li{
+	padding:12px;
+}
+li.response{
+	list-style-type:circle;
+	margin-left:50px;
+}
+img{
+	max-height:320px;
+	max-width:100%;
+}
+		</style>
+	</head>
+	<body>
+		<h1 style="margin-left:14%;">FollowFrost</h1>
+		<div class="nav"><nav>
+			<span class="navitem selectitem">Interview</span>|
+			<span class="navitem">Coverage</span>|
+			<span class="navitem">
+				<a href="/login">Sign In</a>
+			</span>
+		</nav></div>
+		<table>
+			<tr>
+				<td>
+					<h3 class="heading">''' + cgi.escape(interview.title) + '''</h3>
+					<div>
+						<div id="videooverlay" style="padding-top:15px;padding-left:35px;max-width:480px;position:absolute;background:transparent;color:#fff;">Semitransparent Text</div>
+						<video id="popcornsite" width="480" height="320" style="padding:15px;border:3px solid black;background-color:white;margin-right:25px;" src="''' interview.videos[0] '''">
+						</video>
+					</div>
+				</td>
+				<td>
+					<h3 class="heading">You're watching</h3>
+					<div>
+						<div id="tagdiv"></div>
+						<br/>
+						<div id="twitterdiv"></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<div style="margin-left:9%;margin-right:25%;padding:50px 4%;max-width:650px;background-color:#66aacc;">
+			<div style="background-color:#ffffff;padding:15px;">
+				<h3 class="heading">Get the story</h3>
+				<div>
+					Our reporters interviewed local citizens and the mayor in an effort to discover the roots of the education
+					budget crisis.  <a href="/coverage">Read our coverage</a> of this breaking story.
+				</div>
+				<h3 class="heading">Ask questions</h3>
+				Speakers can add video replies that appear in the extended interview
+				<ul>
+					<li class="question">
+						What's the current state of the Gulf of Mexico?  What are you continuing to work on?
+						<br/>
+						Asked by <i>sam pull</i>
+					</li>
+					<li class="response">
+						I added a response to your question.
+						<br/>
+						<button class="play">
+							<span style="font-weight:bold;">
+								&gt;
+							</span>
+							Watch
+						</button>
+						<br/>
+						Added by <i>sandy shores</i>, Environmental Scientist, Earth Outreach
+					</li>
+					<hr/>
+					<li class="question">
+						What hashtags can I use to spread the word, and to find out more about what you're doing?
+						<br/>
+						Asked by <i>somm user</i>
+					</li>
+					<li class="response">
+						A number of our volunteers are using #cleanGulf
+						<br/>
+						Answered by <i>betty tweet</i>, Social Media, Earth Outreach
+					</li>
+					<li class="response">
+						Our project in the Gulf was part of a larger community that we call Grassroots Mapping.  Follow our blog at grassrootsmapping.org
+						<br/>
+						Answered by <i>map maker</i>, Volunteer, Grassroots Mapping
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer" style="margin-left:10%;">
+			Powered by the open web technology <a href="http://popcornjs.org" target="_blank">Popcorn.js</a>
+			<br/><br/>
+			Developed for the Knight-Mozilla Learning Lab by Nick Doiron
+		</div>
+	</body>
+</html>
