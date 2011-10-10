@@ -1,0 +1,27 @@
+-- FollowFrost --
+
+Homepage: http://mapmeld.com/followfrost/
+
+Viewer Page: http://mapmeld.appspot.com/followfrost/view?id=932001
+
+Editor Page: http://mapmeld.appspot.com/followfrost/edit?id=932001
+
+-- The Concept --
+
+Mozilla's Popcorn.js ( http://popcornjs.org ) adds interactive media to video timelines.  It works across HTML5 <video>, YouTube, and Vimeo videos.
+
+In my experience with Popcorn.js, I spent a great deal of time and energy tagging and un-tagging people throughout the video timeline.  Why set up each video as a brand new system, without recognizing meta-data and Twitter profiles as sources of information?
+
+The viewer side connects you to social media profiles you can use to follow up with speakers and reporters in the video.
+
+The editor side of this system is remarkably simple.  As you watch the video, you can drag profiles in and out of editing space.  This creates the timeline meta-data that Popcorn.js uses to construct the interview.
+
+The timeline (created from an HTML5 <video> in videoderive.html) should be posted on the same server as the video file and be served over localhost or the internet.  Every few frames, the average color is added as a band to the timeline, allowing you to navigate the video in a new and memorable way.  If incorporated into the player, this would also allow you to see which parts of the video you have yet to watch.
+
+-- The Technology --
+
+Popcorn.js
+
+HTML5 and JavaScript
+
+Python for Google AppEngine

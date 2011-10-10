@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+var video,c1,c2,c3,ctx1,ctx2,ctx3,width,height;
+function init(){
+	video = document.getElementById("player");
+	c1 = document.getElementById("c1");
+	ctx1 = c1.getContext("2d");
+    c2 = document.getElementById("c2");
+    ctx2 = c2.getContext("2d");
+	c3 = document.getElementById("c3");
+	ctx3 = c3.getContext("2d");
+    width = video.videoWidth / 2;
+	height = video.videoHeight / 2;
+	setInterval(addToCanvas, 750);
+}
+function addToCanvas(){
+	ctx1.drawImage(video, 0, 0, width, height);
+    var frame = ctx1.getImageData(0, 0, width, height);
+	var l = frame.data.length / 4;
+	var r = 0;
+	var g = 0;
+	var b = 0;
+    for (var i = 1; i < l; i++) {
+	  if(Math.abs(frame.data[i * 4 + 0] - frame.data[i * 4 + 1]) > 30 || Math.abs(frame.data[i * 4 + 0]-frame.data[i * 4 + 2]) > 30 || Math.abs(frame.data[i * 4 + 1]-frame.data[i * 4 + 2]) > 30){
+	    if(frame.data[i * 4 + 0] > 180 || frame.data[i * 4 + 1] > 180 || frame.data[i * 4 + 2] > 180){
+			r += frame.data[i * 4 + 0] / l;
+			g += frame.data[i * 4 + 1] / l;
+			b += frame.data[i * 4 + 2] / l;
+		}
+		else{
+			r += r / i;
+			g += g / i;
+			b += b / i;
+		}
+	  }
+	  else{
+		r += r / i;
+		g += g / i;
+		b += b / i;
+	  }
+    }
+	console.log(r + " " + g + " " + b);
+	ctx2.putImageData(frame, 0, 0);
+	//nxtImage.href=c2.toDataURL();
+	var ctxtime = document.getElementById("timeline").getContext("2d");
+	r = Math.round(r);
+	g = Math.round(g);
+	b = Math.round(b);
+	if(r<10){
+		r = "0"+r;
+	}
+	else{
+		r = r.toString(16);
+	}
+	if(g<10){
+		g = "0"+g;
+	}
+	else{
+		g = g.toString(16);
+	}
+	if(b<10){
+		b = "0"+b;
+	}
+	else{
+		b = b.toString(16);
+	}
+	ctxtime.fillStyle="#" + r + "" + g + "" + b;
+	ctxtime.fillRect(Math.round(video.currentTime*2.8),0,8,60);
+}
+	</script>
+</head>
+<body onload="init()">
+	<h1>Visual Timeline Creator</h1>
+	<video id="player" src="http://localhost/MakeDetroit.ogv" width="600" autoplay>
+	</video><br/><br/>
+	<canvas id="timeline" width="600" height="60">
+	</canvas>
+	<canvas id="c1" style="display:none;" width="500" height="500"></canvas>
+	<canvas id="c2" style="display:none;" width="500" height="500"></canvas>
+	<canvas id="c3" style="display:none;" width="500" height="500"></canvas>
+</body>
+</html>
