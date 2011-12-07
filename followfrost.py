@@ -112,7 +112,7 @@ li.response{
 		<div class="footer" style="margin-left:10%;">
 			Powered by the open web technology <a href="http://popcornjs.org" target="_blank">Popcorn.js</a>
 			<br/><br/>
-			Developed for the Knight-Mozilla Learning Lab by Nick Doiron
+			Developed for the Knight-Mozilla Learning Lab and TimesOpen Hack Day 2011
 		</div>
 	</body>
 </html>''')
@@ -138,7 +138,8 @@ class View(webapp.RequestHandler):
 <html>
 	<head>
 		<title>MoJo FollowFrost</title>
-		<script type="text/javascript" src="http://mapmeld.appspot.com/popcorn.min.js"></script>
+		<!-- <script type="text/javascript" src="http://mapmeld.appspot.com/popcorn.min.js"></script> -->
+		<script type="text/javascript" src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
 		<script type="text/javascript">
 var myPopcorn, currentVideo;
 var allVideos = ["''' + '","'.join(interview.videos) + '''"];
@@ -155,16 +156,16 @@ function initVid(vdex){
 		myPopcorn = Popcorn('#popcornsite_vid');
 	}
 	else if(loadVid.split(":")[0] == "youtube"){
-		myPopcorn = Popcorn( Popcorn.youtube( 'popcornsite', 'http://www.youtube.com/watch?v=' + loadVid.split(":")[1], { width: 480 } ) );
+		myPopcorn = Popcorn.youtube( 'popcornsite', 'http://www.youtube.com/watch?v=' + loadVid.split(":")[1], { width: 480 } );
 	}
 	else if(loadVid.split(":")[0] == "vimeo"){
-		myPopcorn = Popcorn( Popcorn.vimeo( 'popcornsite', 'http://www.vimeo.com' + loadVid.split(":")[1], {width: 480 } ) );
+		myPopcorn = Popcorn.vimeo( 'popcornsite', 'http://www.vimeo.com' + loadVid.split(":")[1], {width: 480 } );
 	}
 	myPopcorn.play();
 	connectPlugins();
 }
 function connectPlugins(){\n''')
-	if(interview.plugins is None):
+	if(interview.plugins == []):
 		self.response.out.write('''
 	myPopcorn
 	.tagthisperson({
@@ -508,9 +509,9 @@ img{
 					<h3 class="heading">''' + cgi.escape(interview.title) + '''</h3>
 					<div>
 						<!--<div id="videooverlay" style="padding-top:15px;padding-left:35px;max-width:480px;position:absolute;background:transparent;color:#fff;">Semitransparent Text</div>-->
-						<div id="popcornsite" width="480" height="360" style="padding:15px;border:3px solid black;background-color:white;margin-right:25px;margin-bottom:-60px;" src="''' + interview.videos[0] + '''">
+						<div id="popcornsite" width="480" height="360" style="padding:15px 15px 15px 15px;border:3px solid black;background-color:white;margin-right:25px;margin-bottom:-60px;" src="''' + interview.videos[0] + '''">
 						</div>
-						<img style="display:inline;margin-left:19px;margin-top:-14px" onclick="jumpTo(event)" src="http://mapmeld.appspot.com/makerfairetrack-600.png" width="478" style="margin-top:-200px;margin-left:19px;" height="30">
+						<img style="display:inline;margin-left:19px;margin-top:-14px" onclick="jumpTo(event)" src="http://mapmeld.appspot.com/makerfairetrack-600.png" width="560" style="margin-top:-200px;margin-left:19px;" height="30">
 					</div>
 					<div style="height:140px;">
 					&nbsp;
@@ -558,7 +559,7 @@ img{
 		<div class="footer" style="margin-left:10%;">
 			Powered by the open web technology <a href="http://popcornjs.org" target="_blank">Popcorn.js</a>
 			<br/><br/>
-			Developed for the Knight-Mozilla Learning Lab by Nick Doiron
+			Developed for the Knight-Mozilla Learning Lab and TimesOpen Hack Day 2011
 		</div>
 	</body>
 </html>''')
@@ -584,7 +585,8 @@ class Edit(webapp.RequestHandler):
 <html>
 	<head>
 		<title>MoJo FollowFrost</title>
-		<script type="text/javascript" src="http://mapmeld.appspot.com/popcorn.min.js"></script>
+		<!-- <script type="text/javascript" src="http://mapmeld.appspot.com/popcorn.min.js"></script> -->
+		<script type="text/javascript" src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
 		<script type="text/javascript">
 var myPopcorn;
 function init(){
@@ -599,7 +601,7 @@ function init(){
 		myPopcorn = Popcorn('#popcornsite_vid');
 	}
 	else if(firstVid.split(":")[0] == "youtube"){
-		myPopcorn = Popcorn( Popcorn.youtube( 'popcornsite', 'http://www.youtube.com/watch?v=' + firstVid.split(":")[1], { width: 480 } ) );
+		myPopcorn = Popcorn.youtube( 'popcornsite', 'http://www.youtube.com/watch?v=' + firstVid.split(":")[1], { width: 480 } );
 	}
 	myPopcorn.play();
 }
@@ -776,9 +778,9 @@ legend{
 					<h3 class="heading">''' + cgi.escape(interview.title) + '''</h3>
 					<div>
 						<!--<div id="videooverlay" style="padding-top:15px;padding-left:35px;max-width:480px;position:absolute;background:transparent;color:#fff;">Semitransparent Text</div>-->
-						<div id="popcornsite" width="480" height="360" style="padding:15px;border:3px solid black;background-color:white;margin-right:25px;margin-bottom:-60px;" src="''' + interview.videos[0] + '''">
+						<div id="popcornsite" width="480" height="360" style="padding:15px;border:3px solid black;background-color:white;margin-right:25px;margin-bottom:-60px;padding-left:25px;padding-right:25px;" src="''' + interview.videos[0] + '''">
 						</div>
-						<img style="display:inline;margin-left:19px;margin-top:-14px" onclick="jumpTo(event)" src="http://mapmeld.appspot.com/makerfairetrack-600.png" width="478" style="margin-top:-200px;margin-left:19px;" height="30">
+						<img style="display:inline;margin-left:19px;margin-top:-14px" onclick="jumpTo(event)" src="http://mapmeld.appspot.com/makerfairetrack-600.png" width="560" style="margin-top:-200px;margin-left:19px;" height="30">
 					</div>
 					<div style="height:140px;">
 					&nbsp;
@@ -791,9 +793,9 @@ legend{
 							<legend>Interview Deck</legend>
 							<div id="indeck" class="pplList"  style="max-width:100%;max-height:250px;min-height:100px;min-width:50%;" ondragenter="handleDragEnter(event,this)" ondragleave="handleDragLeave(event,this)" ondragover="handleDragOver(event,this)"  ondrop="handleDrop(event,this)" ondragend="handleDragEnd(event,this)">
 								<table>\n''')
-	if(interview.tags == []):
-		interview.tags = ["mapmeld","bekathwia","MattRichardson","gonkirin","backyardbrains"]
-		interview.put()
+	#if(interview.tags == []):
+	#	interview.tags = ["mapmeld","bekathwia","MattRichardson","gonkirin","backyardbrains"]
+	#	interview.put()
 	divid = 0
 	for ppl in interview.tags:
 		divid = divid + 1
@@ -867,7 +869,7 @@ legend{
 		<div class="footer" style="margin-left:10%;">
 			Powered by the open web technology <a href="http://popcornjs.org" target="_blank">Popcorn.js</a>
 			<br/><br/>
-			Developed for the Knight-Mozilla Learning Lab by Nick Doiron
+			Developed for the Knight-Mozilla Learning Lab and TimesOpen Hack Day 2011
 		</div>
 	</body>
 </html>''')
